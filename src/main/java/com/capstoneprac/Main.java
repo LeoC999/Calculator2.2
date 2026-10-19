@@ -12,8 +12,23 @@ public class Main {
         System.out.println("Please enter the annual interest rate here : ");
         double annualInterestRate = calc2.nextDouble();
         System.out.println("Please enter the years to mature rate here : ");
+        int yearsToMature = calc2.nextInt();
 
+//        FV = P × (1 + (r / d))^n
 
-
-        }
+        futureValue(depositAmount,annualInterestRate, yearsToMature);
+        System.out.println(" This is your future value " + futureValue(annualInterestRate, depositAmount, yearsToMature));
     }
+
+    public static double futureValue( double annualInterestRate , double depositAmount, int yearsToMature)
+    {  return depositAmount * Math.pow(1 + (annualInterestRate/100.0) / 365, yearsToMature * 365);
+
+    }
+
+
+    }
+
+
+
+
+
